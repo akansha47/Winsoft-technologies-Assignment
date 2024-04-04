@@ -1,0 +1,54 @@
+Q1: Replace each array element by its corresponding rank
+  Given an array of distinct integers, replace each array element by its corresponding rank in the array.
+
+The minimum array element has the rank 1; the second minimum element has a rank of 2, and so on… For example,
+
+Input:  { 10, 8, 15, 12, 6, 20, 1 } 
+Output: { 4, 3, 6, 5, 2, 7, 1 }
+
+
+Q2: Given a string s, find the length of the longest substring without repeating characters.
+Example 1:
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+Example 2:
+
+Input: s = "bbbbb"
+Output: 1
+Explanation: The answer is "b", with the length of 1.
+Example 3:
+
+Input: s = "pwwkew"
+Output: 3
+Explanation: The answer is "wke", with the length of 3.
+Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+ 
+Constraints:
+
+0 <= s.length <= 5 * 104
+s consists of English letters, digits, symbols and spaces.
+
+
+Q3:Find non-repeating characters in a string 
+
+Q4:You are given an array of integers. 
+Write a C# program to find the frequency of each unique element in the array and 
+store the results in a dictionary where the key is the element and the value is its frequency.
+Then, print the elements and their frequencies.
+
+Example:
+Input:
+int[] numbers = { 1, 2, 2, 3, 3, 3, 4, 4, 4, 4 };
+
+Output:
+Element: 1, Frequency: 1
+Element: 2, Frequency: 2
+Element: 3, Frequency: 3
+Element: 4, Frequency: 4
+
+
+
+
+
+
