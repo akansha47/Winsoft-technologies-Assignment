@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string s = "aabbccddeeff";
+
+        // Create a dictionary to store the frequency of each character
+        Dictionary<char, int> frequencyMap = new Dictionary<char, int>();
+
+        // Count the frequency of each character in the string
+        foreach (char c in s)
+        {
+            if (frequencyMap.ContainsKey(c))
+            {
+                // If the character already exists in the dictionary, increment its frequency
+                frequencyMap[c]++;
+            }
+            else
+            {
+                // If the character does not exist in the dictionary, add it with a frequency of 1
+                frequencyMap[c] = 1;
+            }
+        }
+
+        // Print the non-repeating characters
+        foreach (var kvp in frequencyMap)
+        {
+            if (kvp.Value == 1)
+            {
+                Console.WriteLine($"Non-repeating character: {kvp.Key}");
+            }
+        }
+    }
+}

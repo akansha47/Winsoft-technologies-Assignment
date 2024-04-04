@@ -1,0 +1,48 @@
+using System;
+using System.Linq;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int[] arr = { 10, 8, 15, 12, 6, 20, 1 };
+        int[] ranks = RankArrayElements(arr);
+        
+        Console.WriteLine("Input array:");
+        PrintArray(arr);
+        
+        Console.WriteLine("Output array:");
+        PrintArray(ranks);
+    }
+
+    static int[] RankArrayElements(int[] arr)
+    {
+        // Create a copy of the original array
+        int[] sortedArr = arr.ToArray();
+
+        // Sort the array
+        Array.Sort(sortedArr);
+
+        // Create a dictionary to store the rank of each element
+        var rankDict = sortedArr.Select((value, index) => new { value, index })
+                                .ToDictionary(pair => pair.value, pair => pair.index + 1);
+
+        // Replace each element in the original array with its rank
+        int[] ranks = new int[arr.Length];
+        for (int i = 0; i < arr.Length; i++)
+        {
+            ranks[i] = rankDict[arr[i]];
+        }
+
+        return ranks;
+    }
+
+    static void PrintArray(int[] arr)
+    {
+        foreach (int num in arr)
+        {
+            Console.Write(num + " ");
+        }
+        Console.WriteLine();
+    }
+}

@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        int[] numbers = { 1, 2, 2, 3, 3, 3, 4, 4, 4, 4 };
+
+        // Create a dictionary to store the frequency of each unique element
+        Dictionary<int, int> frequencyMap = new Dictionary<int, int>();
+
+        // Iterate through the array and count the frequency of each element
+        foreach (int num in numbers)
+        {
+            if (frequencyMap.ContainsKey(num))
+            {
+                // If the element already exists in the dictionary, increment its frequency
+                frequencyMap[num]++;
+            }
+            else
+            {
+                // If the element does not exist in the dictionary, add it with a frequency of 1
+                frequencyMap[num] = 1;
+            }
+        }
+
+        // Print the elements and their frequencies
+        foreach (var kvp in frequencyMap)
+        {
+            Console.WriteLine($"Element: {kvp.Key}, Frequency: {kvp.Value}");
+        }
+    }
+}

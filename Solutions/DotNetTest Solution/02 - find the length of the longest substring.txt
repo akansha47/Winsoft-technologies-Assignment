@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string s1 = "abcabcbb";
+        string s2 = "bbbbb";
+        string s3 = "pwwkew";
+
+        Console.WriteLine($"Length of longest substring without repeating characters in {s1}: {LengthOfLongestSubstring(s1)}");
+        Console.WriteLine($"Length of longest substring without repeating characters in {s2}: {LengthOfLongestSubstring(s2)}");
+        Console.WriteLine($"Length of longest substring without repeating characters in {s3}: {LengthOfLongestSubstring(s3)}");
+    }
+
+    static int LengthOfLongestSubstring(string s)
+    {
+        int n = s.Length;
+        int maxLength = 0;
+        int start = 0;
+        Dictionary<char, int> lastIndexMap = new Dictionary<char, int>();
+
+        for (int end = 0; end < n; end++)
+        {
+            if (lastIndexMap.ContainsKey(s[end]))
+            {
+                start = Math.Max(start, lastIndexMap[s[end]] + 1);
+            }
+
+            lastIndexMap[s[end]] = end;
+            maxLength = Math.Max(maxLength, end - start + 1);
+        }
+
+        return maxLength;
+    }
+}
